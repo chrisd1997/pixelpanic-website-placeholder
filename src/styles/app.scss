@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@import 'variables';
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    color: var(--color-white);
+    background: var(--color-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    span {
+        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+        height: 18px;
+        width: 18px;
+        display: block;
+
+        &:first-child {
+            background: #FFFFFF;
+        }
+
+        &:last-child {
+            border: 1px solid #FFFFFF;
+            margin-left: -10px;
+        }
+    }
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 69px;
+    font-weight: 700;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    max-width: 70%;
+    margin: 25px auto 60px auto;
+    font-size: 24px;
+    line-height: 33px;
+    color: var(--color-muted);
+}
+
+.form {
+    p {
+        margin-bottom: 15px;
+        color: var(--color-white);
+        font-size: 18px;
+        line-height: 25px;
+        margin-top: 0;
+    }
+
+    form {
+        margin: 0 auto;
+        width: 400px;
+
+        .input-wrapper {
+            position: relative;
+
+            input[type="email"] {
+                width: 100%;
+                padding: 18px 25px;
+                border: 3px solid var(--color-white);
+                background: transparent;
+                color: var(--color-white);
+                font-size: 18px;
+                line-height: 25px;
+                outline: none;
+            }
+
+            button[type="submit"] {
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                width: 70px;
+                font-size: 18px;
+                line-height: 25px;
+                border: none;
+                cursor: pointer;
+                background: transparent;
+                z-index: 10;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+
+                svg {
+                    height: 25px;
+                    width: 25px;
+                    margin: auto 0;
+
+                    path {
+                        fill: var(--color-white);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.office-link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+
+    span {
+        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+        height: 18px;
+        width: 18px;
+        display: block;
+        background: #FFFFFF;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 25px;
+        color: var(--color-white);
+        text-transform: uppercase;
+        margin: 0;
+        max-width: 100%;
+        margin-left: 20px;
+    }
+}
+
+.office-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(255, 255, 255);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    span {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+        z-index: 30;
+
+        svg {
+            height: 20px;
+            width: 20px;
+
+            path {
+                fill: var(--color-black);
+            }
+        }
+    }
+}
